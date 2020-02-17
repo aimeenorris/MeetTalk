@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Boards</li>
+{% endblock %}
+
+{% block content %}
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Meet</th>
+        <th>State</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for meet in meets %}
+        <tr>
+          <td>
+            <a href="{% url 'meet_boards' meet.pk %}">{{ meet.meet_name }}</a>
+          </td>
+          <td>
+            <small class="text-muted d-block">{{ meet.state }}</small>
+          </td>
+          <td class="align-middle">
+            {{ meet.start_date}}
+          </td>
+          <td class="align-middle">
+            {{ meet.end_date }}
+          </td>
+        
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
