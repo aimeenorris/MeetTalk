@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block breadcrumb %}
-  <li class="breadcrumb-item"><a href="{% url 'home' %}">Boards</a></li>
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Meets</a></li>
+  <li class="breadcrumb-item active"><a href="{% url 'meet_boards' board.meet.pk %}">{{ board.meet.meet_name }}</a></li>
   <li class="breadcrumb-item active">{{ board.name }}</li>
 {% endblock %}
 

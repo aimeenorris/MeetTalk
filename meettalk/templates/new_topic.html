@@ -2,6 +2,12 @@
 
 {% block title %}{{ topic.subject }}{% endblock %}
 
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Meets</a></li>
+  <li class="breadcrumb-item active"><a href="{% url 'meet_boards' board.meet.pk %}">{{ board.meet.meet_name }}</a></li>
+  <li class="breadcrumb-item active"><a href="{% url 'board_topics' board.meet.pk board.pk %}">{{ board.name }}</a></li>
+{% endblock %}
+
 {% block content %}
   <form method="post" novalidate>
     {% csrf_token %}

@@ -4,6 +4,13 @@
 
 {% block title %}Post a reply{% endblock %}
 
+{% block breadcrumb %}
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Meets</a></li>
+  <li class="breadcrumb-item active"><a href="{% url 'meet_boards' topic.board.meet.pk %}">{{topic.board.meet.meet_name }}</a></li>
+  <li class="breadcrumb-item active"><a href="{% url 'board_topics' topic.board.meet.pk topic.board.pk %}">{{ topic.board.name }}</a></li>
+  <li class="breadcrumb-item active">{{ topic.subject }}</li>
+{% endblock %}
+
 {% block content %}
 
   <form method="post" class="mb-4">
