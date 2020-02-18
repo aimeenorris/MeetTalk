@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block breadcrumb %}
-  <li class="breadcrumb-item active">Boards</li>
+  <li class="breadcrumb-item"><a href="{% url 'home' %}">Meets</a></li>
+  <li class="breadcrumb-item active">{{ meet.meet_name }}</li>
 {% endblock %}
 
 {% block content %}

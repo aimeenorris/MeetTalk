@@ -42,7 +42,7 @@ class TopicListView(ListView):
         return super().get_context_data(**kwargs)
 
     def get_queryset(self):
-        self.board = get_object_or_404(Board, pk = self.kwargs.get('pk'))
+        self.board = get_object_or_404(Board, pk = self.kwargs.get('board_pk'))
         queryset = self.board.topics.order_by('-last_updated').annotate(replies=Count('posts')-1)
         return queryset
 
